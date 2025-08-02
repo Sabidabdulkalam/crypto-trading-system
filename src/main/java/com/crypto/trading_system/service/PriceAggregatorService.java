@@ -62,7 +62,8 @@ public class PriceAggregatorService {
         try {
             BinanceTicker[] tickers = restTemplate.getForObject(BINANCE_URL, BinanceTicker[].class);
             for (BinanceTicker t : tickers) {
-                if (t.symbol.equals("BTCUSDT") || t.symbol.equals("ETHUSDT")) {
+                if (t.symbol.equals("BTCUSDT") || t.symbol.equals("ETHUSDT"))
+                {
                     map.put(t.symbol, new Double[]{
                             Double.parseDouble(t.askPrice),
                             Double.parseDouble(t.bidPrice)
