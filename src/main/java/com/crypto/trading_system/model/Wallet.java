@@ -1,6 +1,6 @@
 package com.crypto.trading_system.model;
 
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 import lombok.*;
 
 
