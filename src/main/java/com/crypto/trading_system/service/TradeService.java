@@ -18,6 +18,8 @@ public class TradeService {
     private final TradeRepository tradeRepository;
     private final WalletRepository walletRepository;
 
+
+    // Executes a BUY or SELL trade based on the latest price and updates wallet.
     @Transactional
     public Trade executeTrade(TradeRequest request) {
         String symbol = request.getSymbol().toUpperCase();
