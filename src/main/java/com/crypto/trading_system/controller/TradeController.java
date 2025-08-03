@@ -6,6 +6,8 @@ import com.crypto.trading_system.service.TradeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api")
 @RequiredArgsConstructor
@@ -16,5 +18,10 @@ public class TradeController {
     @PostMapping("/trade")
     public Trade trade(@RequestBody TradeRequest request) {
         return tradeService.executeTrade(request);
+    }
+
+    @GetMapping("/history")
+    public List<Trade> getTradeHistory() {
+        return tradeService.getAllTrades();
     }
 }
